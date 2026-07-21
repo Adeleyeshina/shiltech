@@ -218,7 +218,7 @@ p{margin:0;}
     z-index:999;
     border-bottom:2px solid var(--pink-500);
     box-shadow:0 12px 32px rgba(0,0,0,0.5);
-    overflow-y:auto;-webkit-overflow-scrolling:touch;
+    overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;
     transform:translateY(-100%);
     opacity:0;visibility:hidden;
     transition:transform .3s var(--ease),opacity .3s var(--ease),visibility .3s;
@@ -244,12 +244,14 @@ p{margin:0;}
 
   /* Mega dropdown on mobile */
   .nav-item .mega{
-    position:static;transform:none;min-width:0;width:100%;
+    position:static!important;transform:none!important;min-width:0!important;width:100%!important;
+    left:auto!important;top:auto!important;
     opacity:1;visibility:visible;display:none;
     box-shadow:none;grid-template-columns:1fr;gap:0;
     background:var(--deep-800);
     border-radius:var(--radius-sm);
     margin:4px 0 8px;padding:8px 0;
+    box-sizing:border-box;max-width:100%;overflow:hidden;
   }
   .nav-item.open .mega{display:grid;}
   .mega a{
