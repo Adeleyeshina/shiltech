@@ -1737,3 +1737,39 @@ section {
   width: 100%;
   background: repeating-linear-gradient(135deg, var(--pink-200) 0 14px, var(--deep-900) 14px 28px);
 }
+
+/* ── Toast ── */
+.toast {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  left: auto;
+  transform: translateX(120%);
+  background: var(--deep-900);
+  color: var(--white);
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  opacity: 0;
+  transition: transform .4s var(--ease), opacity .4s var(--ease);
+  pointer-events: none;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.toast.success {
+  background: #1a7a3a;
+}
+
+.toast.error {
+  background: #b33030;
+}
